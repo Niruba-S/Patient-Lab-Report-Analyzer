@@ -16,7 +16,8 @@ if "text" not in st.session_state:
     st.session_state.text = " "
 if "show_clicked" not in st.session_state:
     st.session_state.show_clicked = False
-
+if "Image_text" not in st.session_state:
+    st.session_state.Image_text = ""
 if st.session_state.page == "home":
     st.header("Patient Lab Report Analyzer")
 
@@ -30,6 +31,7 @@ if st.session_state.page == "home":
                         try:
                             t_im=dis.request()
                             st.session_state.text = t_im
+                            st.session_state.Image_text =t_im
                         except:
                             pass
                         text = dis.analyze(st.session_state.text)
@@ -39,6 +41,7 @@ if st.session_state.page == "home":
                         st.title("AI GENERATED SUMMARY")
                         sum=dis.summary(st.session_state.text)
                         st.write(sum)
+                        st.session_state.text+=st.session_state.Image_text
                         st.session_state.show_clicked = True
                     except Exception as e:
                         st.error(f"Error processing PDF: {e}")
