@@ -60,7 +60,8 @@ class display:
         else:
             message = [
                 {"role": "system", "content": "You are a medical report analyzer."},
-                {"role": "user", "content": f" your are given input of medical reports extracted from the pdf and information extracted from images,analyze both and extarct detailed info and don't add the summary: {text}"}
+                {"role": "user", "content": f" your are given input of medical reports extracted from the pdf and information extracted from images,analyze both and extarct detailed info and merge them and give a all information after merging them and don't add the summary: {text}"}
+            ]
             ]
             response =  client.chat.completions.create(
                     model="gpt-4o",
