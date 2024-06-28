@@ -257,8 +257,8 @@ class display:
     def get_openai_response(self,info,query):
         client = OpenAI(api_key=self.key)
         message = [
-        {"role": "system", "content": "You are a data analyst."},
-        {"role": "user", "content": f"Analyze the following information and answer the query: {info}\n\nUser Query: {query}"}
+        {"role": "system", "content": "You are a quetion answer bot."},
+        {"role": "user", "content": f"Analyze the following information and answer the query and answer the query only given from the given infomation: {info}\n\nUser Query: {query}"}
     ]
   
         response = client.chat.completions.create(
