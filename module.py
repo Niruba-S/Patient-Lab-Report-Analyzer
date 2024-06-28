@@ -61,7 +61,7 @@ class display:
             message = [
                 {"role": "system", "content": "You are a medical report analyzer."},
                 {"role": "user", "content": f" Analyze the following medical reports extracted from the PDF and information extracted from images. Merge the information and provide a detailed, structured analysis without adding a summary: {text}"}
-            ]
+
             ]
             response =  client.chat.completions.create(
                     model="gpt-4o",
