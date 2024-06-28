@@ -78,7 +78,9 @@ elif st.session_state.page == "chatbot":
             st.write(f"**user:** {message['content']}")
             
             
-
+if __name__ == "__main__":
+    main()
+    st.run(host="0.0.0.0", port=8001)
 
 
 
