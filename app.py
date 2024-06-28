@@ -5,7 +5,7 @@ from module import display
 
 def main():
     load_dotenv()
-    st.session_state.api_key = os.environ.get("OPEN_AI_KEY")
+    st.session_state.api_key = ""
 
     if "page" not in st.session_state:
         st.session_state.page = "home"
