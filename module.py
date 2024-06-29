@@ -258,7 +258,7 @@ class display:
         client = OpenAI(api_key=self.key)
         message = [
         {"role": "system", "content": "You are a quetion answer bot."},
-        {"role": "user", "content": f"Analyze the following information and answer the query and answer the query only given from the given infomation: {info}\n\nUser Query: {query}"}
+        {"role": "user", "content": f"Analyze the following information and answer the query and answer the query only given from the given infomation and should know the basic meaning of medical term in the report: {info}\n\nUser Query: {query}"}
     ]
   
         response = client.chat.completions.create(
