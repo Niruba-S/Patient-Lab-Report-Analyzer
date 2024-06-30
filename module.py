@@ -281,7 +281,7 @@ class display:
             mess={
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": "your are given image of medical reports analyze and extract detailed information and do not leave any of the inforamtion"},
+                   {"type": "text", "text": "your are given images of medical reports analyze and extarct detailed info without leaving any image and any information"},
                     {
                         "type": "image_url",
                         "image_url": {
