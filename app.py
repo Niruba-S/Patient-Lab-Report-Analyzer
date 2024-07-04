@@ -37,14 +37,13 @@ try:
         if st.session_state.uploaded_file and st.button("ANALYZE") :
             with st.spinner("ANALYZING"):
                 try:
-                    dis = display(st.session_state.uploaded_file, st.session_state.api_key)
-                    try:
-                        t_im = dis.request()
-                        st.session_state.text = t_im
-                        st.session_state.Image_text = t_im
-                    except:
-                        pass
-                    text = dis.analyze(st.session_state.text)
+                    file_content = uploaded_file.read()
+                    with open(uploaded_file.name, "wb") as temp_file:
+                        temp_file.write(file_content)
+
+                    path=str(uploaded_file.name)
+                    dis = display(uploaded_file.name, st.session_state.api_key)
+                    text = dis.analyze()
                     st.session_state.text = text
                     st.title("REPORT")
                     st.write(st.session_state.text)
