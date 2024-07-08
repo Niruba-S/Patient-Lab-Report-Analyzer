@@ -303,6 +303,13 @@
 
 
 
+from langchain.text_splitter import CharacterTextSplitter
+from PyPDF2 import PdfReader
+
+import fitz
+import PIL.Image
+import io
+import base64
 from openai import OpenAI 
 import os
 import boto3
@@ -310,8 +317,8 @@ import time
 import uuid
 import os
 from dotenv import load_dotenv
-load_dotenv()
 
+load_dotenv()
 
 
 def analyze_text_from_pdf_s3(pdf_path):
