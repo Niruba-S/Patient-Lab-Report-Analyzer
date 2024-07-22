@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
-from module1 import display
+from module import display
 import tempfile
 load_dotenv()
 st.session_state.api_key = os.environ.get("OPEN_AI_KEY") 
